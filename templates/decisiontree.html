@@ -1,0 +1,553 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Decision Tree</title>
+</head>
+<style>
+    .login-panel {
+        margin-top: 50px;
+</style>
+<body background="static/cross-5651794_1920.jpg">
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<div class="container">
+    <div class="row">
+		<div class="col-md-4">
+		</div>
+        <div class="col-md-4">
+            <div class="login-panel panel panel-primary">
+                <div class="panel-heading">
+					<h3 class="panel-title">Decision Tree</h3>
+                    <h4 class="panel-title">Select symptoms</h4>
+                </div>
+                <div class="panel-body">
+                    <form role="form" method="POST" action="decision_tree_req">
+                        <fieldset>
+							<div class="form-group">
+                                <label class="form-control"> Symptom 1</label>
+                            </div>
+							<div class="form-group"  >
+                                <select id="gender" name="sym1"class="form-control form-control-md" >
+									<option>back_pain</option>
+									<option>constipation</option>
+									<option>abdominal_pain</option>
+									<option>diarrhoea</option>
+									<option>mild_fever</option>
+									<option>yellow_urine</option>
+									<option>yellowing_of_eyes</option>
+									<option>acute_liver_failure</option>
+									<option>fluid_overload</option>
+									<option>swelling_of_stomach</option>
+									<option>swelled_lymph_nodes</option>
+									<option>malaise</option>
+									<option>blurred_and_distorted_vision</option>
+									<option>phlegm</option>
+									<option>throat_irritation</option>
+									<option>redness_of_eyes</option>
+									<option>sinus_pressure</option>
+									<option>runny_nose</option>
+									<option>congestion</option>
+									<option>chest_pain</option>
+									<option>weakness_in_limbs</option>
+									<option>fast_heart_rate</option>
+									<option>pain_during_bowel_movements</option>
+									<option>pain_in_anal_region</option>
+									<option>bloody_stool</option>
+									<option>irritation_in_anus</option>
+									<option>neck_pain</option>
+									<option>dizziness</option>
+									<option>cramps</option>
+									<option>bruising</option>
+									<option>obesity</option>
+									<option>swollen_legs</option>
+									<option>swollen_blood_vessels</option>
+									<option>puffy_face_and_eyes</option>
+									<option>enlarged_thyroid</option>
+									<option>brittle_nails</option>
+									<option>swollen_extremeties</option>
+									<option>excessive_hunger</option>
+									<option>extra_marital_contacts</option>
+									<option>drying_and_tingling_lips</option>
+									<option>slurred_speech</option>
+									<option>knee_pain</option>
+									<option>hip_joint_pain</option>
+									<option>muscle_weakness</option>
+									<option>stiff_neck</option>
+									<option>swelling_joints</option>
+									<option>movement_stiffness</option>
+									<option>spinning_movements</option>
+									<option>loss_of_balance</option>
+									<option>unsteadiness</option>
+									<option>weakness_of_one_body_side</option>
+									<option>loss_of_smell</option>
+									<option>bladder_discomfort</option>
+									<option>foul_smell_of urine</option>
+									<option>continuous_feel_of_urine</option>
+									<option>passage_of_gases</option>
+									<option>internal_itching</option>
+									<option>toxic_look_(typhos)</option>
+									<option>depression</option>
+									<option>irritability</option>
+									<option>muscle_pain</option>
+									<option>altered_sensorium</option>
+									<option>red_spots_over_body</option>
+									<option>belly_pain</option>
+									<option>abnormal_menstruation</option>
+									<option>dischromic _patches</option>
+									<option>watering_from_eyes</option>
+									<option>increased_appetite</option>
+									<option>polyuria</option>
+									<option>family_history</option>
+									<option>mucoid_sputum</option>
+									<option>rusty_sputum</option>
+									<option>lack_of_concentration</option>
+									<option>visual_disturbances</option>
+									<option>receiving_blood_transfusion</option>
+									<option>receiving_unsterile_injections</option>
+									<option>coma</option>
+									<option>stomach_bleeding</option>
+									<option>distention_of_abdomen</option>
+									<option>history_of_alcohol_consumption</option>
+									<option>fluid_overload</option>
+									<option>blood_in_sputum</option>
+									<option>prominent_veins_on_calf</option>
+									<option>palpitations</option>
+									<option>painful_walking</option>
+									<option>pus_filled_pimples</option>
+									<option>blackheads</option>
+									<option>scurring</option>
+									<option>skin_peeling</option>
+									<option>silver_like_dusting</option>
+									<option>small_dents_in_nails</option>
+									<option>inflammatory_nails</option>
+									<option>blister</option>
+									<option>red_sore_around_nose</option>
+									<option>yellow_crust_ooze</option>
+								</select>
+                            </div>
+							<div class="form-group">
+                                <label class="form-control"> Symptom 2</label>
+                            </div>
+							<div class="form-group"  >
+                                <select id="gender" name="sym2"class="form-control form-control-md" >
+									<option>back_pain</option>
+									<option>constipation</option>
+									<option>abdominal_pain</option>
+									<option>diarrhoea</option>
+									<option>mild_fever</option>
+									<option>yellow_urine</option>
+									<option>yellowing_of_eyes</option>
+									<option>acute_liver_failure</option>
+									<option>fluid_overload</option>
+									<option>swelling_of_stomach</option>
+									<option>swelled_lymph_nodes</option>
+									<option>malaise</option>
+									<option>blurred_and_distorted_vision</option>
+									<option>phlegm</option>
+									<option>throat_irritation</option>
+									<option>redness_of_eyes</option>
+									<option>sinus_pressure</option>
+									<option>runny_nose</option>
+									<option>congestion</option>
+									<option>chest_pain</option>
+									<option>weakness_in_limbs</option>
+									<option>fast_heart_rate</option>
+									<option>pain_during_bowel_movements</option>
+									<option>pain_in_anal_region</option>
+									<option>bloody_stool</option>
+									<option>irritation_in_anus</option>
+									<option>neck_pain</option>
+									<option>dizziness</option>
+									<option>cramps</option>
+									<option>bruising</option>
+									<option>obesity</option>
+									<option>swollen_legs</option>
+									<option>swollen_blood_vessels</option>
+									<option>puffy_face_and_eyes</option>
+									<option>enlarged_thyroid</option>
+									<option>brittle_nails</option>
+									<option>swollen_extremeties</option>
+									<option>excessive_hunger</option>
+									<option>extra_marital_contacts</option>
+									<option>drying_and_tingling_lips</option>
+									<option>slurred_speech</option>
+									<option>knee_pain</option>
+									<option>hip_joint_pain</option>
+									<option>muscle_weakness</option>
+									<option>stiff_neck</option>
+									<option>swelling_joints</option>
+									<option>movement_stiffness</option>
+									<option>spinning_movements</option>
+									<option>loss_of_balance</option>
+									<option>unsteadiness</option>
+									<option>weakness_of_one_body_side</option>
+									<option>loss_of_smell</option>
+									<option>bladder_discomfort</option>
+									<option>foul_smell_of urine</option>
+									<option>continuous_feel_of_urine</option>
+									<option>passage_of_gases</option>
+									<option>internal_itching</option>
+									<option>toxic_look_(typhos)</option>
+									<option>depression</option>
+									<option>irritability</option>
+									<option>muscle_pain</option>
+									<option>altered_sensorium</option>
+									<option>red_spots_over_body</option>
+									<option>belly_pain</option>
+									<option>abnormal_menstruation</option>
+									<option>dischromic _patches</option>
+									<option>watering_from_eyes</option>
+									<option>increased_appetite</option>
+									<option>polyuria</option>
+									<option>family_history</option>
+									<option>mucoid_sputum</option>
+									<option>rusty_sputum</option>
+									<option>lack_of_concentration</option>
+									<option>visual_disturbances</option>
+									<option>receiving_blood_transfusion</option>
+									<option>receiving_unsterile_injections</option>
+									<option>coma</option>
+									<option>stomach_bleeding</option>
+									<option>distention_of_abdomen</option>
+									<option>history_of_alcohol_consumption</option>
+									<option>fluid_overload</option>
+									<option>blood_in_sputum</option>
+									<option>prominent_veins_on_calf</option>
+									<option>palpitations</option>
+									<option>painful_walking</option>
+									<option>pus_filled_pimples</option>
+									<option>blackheads</option>
+									<option>scurring</option>
+									<option>skin_peeling</option>
+									<option>silver_like_dusting</option>
+									<option>small_dents_in_nails</option>
+									<option>inflammatory_nails</option>
+									<option>blister</option>
+									<option>red_sore_around_nose</option>
+									<option>yellow_crust_ooze</option>
+								</select>
+                            </div>
+							<div class="form-group">
+                                <label class="form-control"> Symptom 3</label>
+                            </div>
+							<div class="form-group"  >
+                                <select id="gender" name="sym3"class="form-control form-control-md" >
+									<option>back_pain</option>
+									<option>constipation</option>
+									<option>abdominal_pain</option>
+									<option>diarrhoea</option>
+									<option>mild_fever</option>
+									<option>yellow_urine</option>
+									<option>yellowing_of_eyes</option>
+									<option>acute_liver_failure</option>
+									<option>fluid_overload</option>
+									<option>swelling_of_stomach</option>
+									<option>swelled_lymph_nodes</option>
+									<option>malaise</option>
+									<option>blurred_and_distorted_vision</option>
+									<option>phlegm</option>
+									<option>throat_irritation</option>
+									<option>redness_of_eyes</option>
+									<option>sinus_pressure</option>
+									<option>runny_nose</option>
+									<option>congestion</option>
+									<option>chest_pain</option>
+									<option>weakness_in_limbs</option>
+									<option>fast_heart_rate</option>
+									<option>pain_during_bowel_movements</option>
+									<option>pain_in_anal_region</option>
+									<option>bloody_stool</option>
+									<option>irritation_in_anus</option>
+									<option>neck_pain</option>
+									<option>dizziness</option>
+									<option>cramps</option>
+									<option>bruising</option>
+									<option>obesity</option>
+									<option>swollen_legs</option>
+									<option>swollen_blood_vessels</option>
+									<option>puffy_face_and_eyes</option>
+									<option>enlarged_thyroid</option>
+									<option>brittle_nails</option>
+									<option>swollen_extremeties</option>
+									<option>excessive_hunger</option>
+									<option>extra_marital_contacts</option>
+									<option>drying_and_tingling_lips</option>
+									<option>slurred_speech</option>
+									<option>knee_pain</option>
+									<option>hip_joint_pain</option>
+									<option>muscle_weakness</option>
+									<option>stiff_neck</option>
+									<option>swelling_joints</option>
+									<option>movement_stiffness</option>
+									<option>spinning_movements</option>
+									<option>loss_of_balance</option>
+									<option>unsteadiness</option>
+									<option>weakness_of_one_body_side</option>
+									<option>loss_of_smell</option>
+									<option>bladder_discomfort</option>
+									<option>foul_smell_of urine</option>
+									<option>continuous_feel_of_urine</option>
+									<option>passage_of_gases</option>
+									<option>internal_itching</option>
+									<option>toxic_look_(typhos)</option>
+									<option>depression</option>
+									<option>irritability</option>
+									<option>muscle_pain</option>
+									<option>altered_sensorium</option>
+									<option>red_spots_over_body</option>
+									<option>belly_pain</option>
+									<option>abnormal_menstruation</option>
+									<option>dischromic _patches</option>
+									<option>watering_from_eyes</option>
+									<option>increased_appetite</option>
+									<option>polyuria</option>
+									<option>family_history</option>
+									<option>mucoid_sputum</option>
+									<option>rusty_sputum</option>
+									<option>lack_of_concentration</option>
+									<option>visual_disturbances</option>
+									<option>receiving_blood_transfusion</option>
+									<option>receiving_unsterile_injections</option>
+									<option>coma</option>
+									<option>stomach_bleeding</option>
+									<option>distention_of_abdomen</option>
+									<option>history_of_alcohol_consumption</option>
+									<option>fluid_overload</option>
+									<option>blood_in_sputum</option>
+									<option>prominent_veins_on_calf</option>
+									<option>palpitations</option>
+									<option>painful_walking</option>
+									<option>pus_filled_pimples</option>
+									<option>blackheads</option>
+									<option>scurring</option>
+									<option>skin_peeling</option>
+									<option>silver_like_dusting</option>
+									<option>small_dents_in_nails</option>
+									<option>inflammatory_nails</option>
+									<option>blister</option>
+									<option>red_sore_around_nose</option>
+									<option>yellow_crust_ooze</option>
+								</select>
+                            </div>
+							<div class="form-group">
+                                <label class="form-control"> Symptom 4</label>
+                            </div>
+							<div class="form-group"  >
+                                <select id="gender" name="sym4"class="form-control form-control-md" >
+									<option>back_pain</option>
+									<option>constipation</option>
+									<option>abdominal_pain</option>
+									<option>diarrhoea</option>
+									<option>mild_fever</option>
+									<option>yellow_urine</option>
+									<option>yellowing_of_eyes</option>
+									<option>acute_liver_failure</option>
+									<option>fluid_overload</option>
+									<option>swelling_of_stomach</option>
+									<option>swelled_lymph_nodes</option>
+									<option>malaise</option>
+									<option>blurred_and_distorted_vision</option>
+									<option>phlegm</option>
+									<option>throat_irritation</option>
+									<option>redness_of_eyes</option>
+									<option>sinus_pressure</option>
+									<option>runny_nose</option>
+									<option>congestion</option>
+									<option>chest_pain</option>
+									<option>weakness_in_limbs</option>
+									<option>fast_heart_rate</option>
+									<option>pain_during_bowel_movements</option>
+									<option>pain_in_anal_region</option>
+									<option>bloody_stool</option>
+									<option>irritation_in_anus</option>
+									<option>neck_pain</option>
+									<option>dizziness</option>
+									<option>cramps</option>
+									<option>bruising</option>
+									<option>obesity</option>
+									<option>swollen_legs</option>
+									<option>swollen_blood_vessels</option>
+									<option>puffy_face_and_eyes</option>
+									<option>enlarged_thyroid</option>
+									<option>brittle_nails</option>
+									<option>swollen_extremeties</option>
+									<option>excessive_hunger</option>
+									<option>extra_marital_contacts</option>
+									<option>drying_and_tingling_lips</option>
+									<option>slurred_speech</option>
+									<option>knee_pain</option>
+									<option>hip_joint_pain</option>
+									<option>muscle_weakness</option>
+									<option>stiff_neck</option>
+									<option>swelling_joints</option>
+									<option>movement_stiffness</option>
+									<option>spinning_movements</option>
+									<option>loss_of_balance</option>
+									<option>unsteadiness</option>
+									<option>weakness_of_one_body_side</option>
+									<option>loss_of_smell</option>
+									<option>bladder_discomfort</option>
+									<option>foul_smell_of urine</option>
+									<option>continuous_feel_of_urine</option>
+									<option>passage_of_gases</option>
+									<option>internal_itching</option>
+									<option>toxic_look_(typhos)</option>
+									<option>depression</option>
+									<option>irritability</option>
+									<option>muscle_pain</option>
+									<option>altered_sensorium</option>
+									<option>red_spots_over_body</option>
+									<option>belly_pain</option>
+									<option>abnormal_menstruation</option>
+									<option>dischromic _patches</option>
+									<option>watering_from_eyes</option>
+									<option>increased_appetite</option>
+									<option>polyuria</option>
+									<option>family_history</option>
+									<option>mucoid_sputum</option>
+									<option>rusty_sputum</option>
+									<option>lack_of_concentration</option>
+									<option>visual_disturbances</option>
+									<option>receiving_blood_transfusion</option>
+									<option>receiving_unsterile_injections</option>
+									<option>coma</option>
+									<option>stomach_bleeding</option>
+									<option>distention_of_abdomen</option>
+									<option>history_of_alcohol_consumption</option>
+									<option>fluid_overload</option>
+									<option>blood_in_sputum</option>
+									<option>prominent_veins_on_calf</option>
+									<option>palpitations</option>
+									<option>painful_walking</option>
+									<option>pus_filled_pimples</option>
+									<option>blackheads</option>
+									<option>scurring</option>
+									<option>skin_peeling</option>
+									<option>silver_like_dusting</option>
+									<option>small_dents_in_nails</option>
+									<option>inflammatory_nails</option>
+									<option>blister</option>
+									<option>red_sore_around_nose</option>
+									<option>yellow_crust_ooze</option>
+								</select>
+                            </div>
+							<div class="form-group">
+                                <label class="form-control"> Symptom 5</label>
+                            </div>
+							<div class="form-group"  >
+                                <select id="gender" name="sym5"class="form-control form-control-md" >
+									<option>back_pain</option>
+									<option>constipation</option>
+									<option>abdominal_pain</option>
+									<option>diarrhoea</option>
+									<option>mild_fever</option>
+									<option>yellow_urine</option>
+									<option>yellowing_of_eyes</option>
+									<option>acute_liver_failure</option>
+									<option>fluid_overload</option>
+									<option>swelling_of_stomach</option>
+									<option>swelled_lymph_nodes</option>
+									<option>malaise</option>
+									<option>blurred_and_distorted_vision</option>
+									<option>phlegm</option>
+									<option>throat_irritation</option>
+									<option>redness_of_eyes</option>
+									<option>sinus_pressure</option>
+									<option>runny_nose</option>
+									<option>congestion</option>
+									<option>chest_pain</option>
+									<option>weakness_in_limbs</option>
+									<option>fast_heart_rate</option>
+									<option>pain_during_bowel_movements</option>
+									<option>pain_in_anal_region</option>
+									<option>bloody_stool</option>
+									<option>irritation_in_anus</option>
+									<option>neck_pain</option>
+									<option>dizziness</option>
+									<option>cramps</option>
+									<option>bruising</option>
+									<option>obesity</option>
+									<option>swollen_legs</option>
+									<option>swollen_blood_vessels</option>
+									<option>puffy_face_and_eyes</option>
+									<option>enlarged_thyroid</option>
+									<option>brittle_nails</option>
+									<option>swollen_extremeties</option>
+									<option>excessive_hunger</option>
+									<option>extra_marital_contacts</option>
+									<option>drying_and_tingling_lips</option>
+									<option>slurred_speech</option>
+									<option>knee_pain</option>
+									<option>hip_joint_pain</option>
+									<option>muscle_weakness</option>
+									<option>stiff_neck</option>
+									<option>swelling_joints</option>
+									<option>movement_stiffness</option>
+									<option>spinning_movements</option>
+									<option>loss_of_balance</option>
+									<option>unsteadiness</option>
+									<option>weakness_of_one_body_side</option>
+									<option>loss_of_smell</option>
+									<option>bladder_discomfort</option>
+									<option>foul_smell_of urine</option>
+									<option>continuous_feel_of_urine</option>
+									<option>passage_of_gases</option>
+									<option>internal_itching</option>
+									<option>toxic_look_(typhos)</option>
+									<option>depression</option>
+									<option>irritability</option>
+									<option>muscle_pain</option>
+									<option>altered_sensorium</option>
+									<option>red_spots_over_body</option>
+									<option>belly_pain</option>
+									<option>abnormal_menstruation</option>
+									<option>dischromic _patches</option>
+									<option>watering_from_eyes</option>
+									<option>increased_appetite</option>
+									<option>polyuria</option>
+									<option>family_history</option>
+									<option>mucoid_sputum</option>
+									<option>rusty_sputum</option>
+									<option>lack_of_concentration</option>
+									<option>visual_disturbances</option>
+									<option>receiving_blood_transfusion</option>
+									<option>receiving_unsterile_injections</option>
+									<option>coma</option>
+									<option>stomach_bleeding</option>
+									<option>distention_of_abdomen</option>
+									<option>history_of_alcohol_consumption</option>
+									<option>fluid_overload</option>
+									<option>blood_in_sputum</option>
+									<option>prominent_veins_on_calf</option>
+									<option>palpitations</option>
+									<option>painful_walking</option>
+									<option>pus_filled_pimples</option>
+									<option>blackheads</option>
+									<option>scurring</option>
+									<option>skin_peeling</option>
+									<option>silver_like_dusting</option>
+									<option>small_dents_in_nails</option>
+									<option>inflammatory_nails</option>
+									<option>blister</option>
+									<option>red_sore_around_nose</option>
+									<option>yellow_crust_ooze</option>
+								</select>
+                            </div>
+                            
+							 <input class="btn btn-md btn-success btn-block" type="submit" value="Submit" name="" >
+							
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+
+</html>

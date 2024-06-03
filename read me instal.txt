@@ -1,0 +1,15 @@
+As for the question itself - you can export your Anaconda environment using:
+
+conda env export > environment.yml
+And recreate it using:
+
+conda env create -f environment.yml
+Please note that as others suggested - you should use virtual environments which allows you to create a certain environment that is separated from that of your machine and manage it more easily.
+
+To create a virtual environment in Anaconda you can use:
+
+conda create -n yourenvname python=x.x anaconda
+which you activate using:
+
+source activate yourenvname
+shareimprove this answer
